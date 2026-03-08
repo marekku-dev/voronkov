@@ -1,0 +1,165 @@
+* {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body * {
+	font-family: 'ABC Monument Grotesk';
+	font-size: 14px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+
+	width: 100vw;
+	height: 24px;
+
+	text-transform: uppercase;
+}
+
+footer .half {
+	grid-column: span 2;
+	display: flex;
+	justify-content: space-between;
+}
+
+footer ul {
+	display: flex;
+	gap: 7px;
+}
+
+h1, h2, h3, p, a {
+	filter: blur(0.25px);
+}
+
+h1, h2 {
+	text-transform: uppercase;
+}
+
+h1 {
+	margin-bottom: 70px;
+	grid-column: span 2;
+}
+
+a {
+	text-decoration: none;
+	color: #fff; 
+}
+
+.nav-left {
+	position: absolute;
+	left: 0;
+	width: 64px;
+	height: 100%;
+	padding: 14px;
+	z-index: 999;
+}
+
+.nav-right {
+	position: absolute;
+	right: 0;
+	width: 64px;
+	height: 100%;
+	padding: 14px;
+	text-align: right;
+	z-index: 999;
+}
+
+.background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+.justify {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	text-align: justify;
+	hyphens: auto;
+}
+
+.wrapper {
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.text-main__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	top: 0;
+	grid-column: span 2;
+	gap: 7px;
+
+	color: #fff;
+	padding: 14px 0;
+}
+
+.text-main__wrapper p, .text-main__wrapper h2 {
+	max-width: 50%;
+	text-align: center;
+}
+
+.background-images__wrapper {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.half {
+	position: absolute;
+	width: 50vw;
+	height: 100%;
+}
+
+.left {
+	left: 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 0 192px 0 64px;
+  	gap: 14px;
+}
+
+.right {
+	right: 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 0 64px 0 192px;
+  	gap: 14px;
+}
+
+.page {
+	display: grid;
+	grid-column: span 2;
+	grid-template-columns: subgrid;
+
+	padding-top: 14px;
+	color: #fff;
+	mix-blend-mode: difference;
+}
+
+.half img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.right img {
+	object-position: left center;
+}
+
+.left img {
+
+	object-position: right center;
+}
