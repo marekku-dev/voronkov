@@ -105,7 +105,8 @@ a {
 }
 
 .text-main__wrapper p, .text-main__wrapper h2 {
-	max-width: 50%;
+	min-width: 250px;
+	max-width: 400px;
 	text-align: center;
 }
 
@@ -145,7 +146,7 @@ a {
 
 	padding-top: 14px;
 	color: #fff;
-	mix-blend-mode: difference;
+	/*mix-blend-mode: difference;*/
 }
 
 .half img {
@@ -162,4 +163,8 @@ a {
 .left img {
 
 	object-position: right center;
+}
+
+.jouele-playlist {
+	width: 300px;
 }
