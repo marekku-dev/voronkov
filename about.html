@@ -3,30 +3,27 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../main.css">
-	<link rel="stylesheet" href="../media.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="media.css">
 	<title>Ilya Voronkov – About</title>
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Ilya Voronkov" />
 	<meta property="og:title" content="Ilya Voronkov" />
 	<meta property="og:url" content="" />
 	<meta property="og:image" content="" />
-	<link rel="icon" type="image/png" href="../favicon.png">
+	<link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
 
-<div class="wrapper">
-	<a class="nav-left" href="../index.html">03<br>←</a>
-	<a class="nav-right" href="../works.html">04<br>→</a>
+<div class="wrapper page-about" data-prev="classes.html" data-prev-n="09" data-next="index.html" data-next-n="10">
 
 	<div class="half left">
 		<div class="page">
-			<h2>About</h2>
 			<div class="justify">
-				<p>I am a music producer and sound engineer living in Lisbon, Portugal. </p>
-				<p>I do quite a wide range of activities in sound: creating music from idea to finished product, including recording, arranging, mixing, mastering and distribution stages, as well as sound design for commercials, podcasts and shows. </p>
-				<p>I work with various artists all over the world, both professionals and amateurs, music labels and production companies in Europe and USA. </p>
+				<p><span class="highlight">I am a music producer and sound engineer living in Lisbon, Portugal.</span></p>
+				<p><span class="highlight">I do quite a wide range of activities in sound: creating music from idea to finished product, including recording, arranging, mixing, mastering and distribution stages, as well as sound design for commercials, podcasts and shows.</span></p>
+				<p><span class="highlight">I work with various artists all over the world, both professionals and amateurs, music labels and production companies in Europe and USA.</span></p>
 			</div>
 		</div>
 	</div>
@@ -34,16 +31,59 @@
 	<div class="half right">
 		<div class="page">
 			<p></p>
-			<p>Leave your email and I’ll contact you</p>
+			
 		</div>
 	</div>
 
-	<footer id="footer"></footer>
+	<nav id="footer" class="navbar"></nav>
 
-	<img src="images/background-2.webp" class="background">
+	<div class="koreshok">
+		<form class="contact-form" id="contactForm">
+			<h2>Get in touch</h2>
+			<p></p>
+			<input type="text" name="name" placeholder="Your name" autocomplete="off" required>
+			<input type="email" name="email" placeholder="Your email" autocomplete="off" required>
+			<textarea name="message" placeholder="Tell me about your project" rows="4" required></textarea>
+			<button type="submit">Send →</button>
+			<p class="form-status" id="formStatus"></p>
+		</form>
+
+		<div class="info">
+			<p class="koreshok-text"><span>© All rights reserved.</span> All recordings produced, mixed and mastered by Ilya Voronkov, Lisbon, Portugal. Designed by Mark Kuzmin. Photographs by Daria Voronkova.</p>
+
+	    	<p class="upper">2026, Lisbon</p>
+	    </div>
+	</div>
+
+	<img src="images/about.png" class="background">
+
+	
 
 </div>
 
-<script src="../js/components.js"></script>
+<script src="js/components.js"></script>
+<script>
+	document.getElementById('contactForm').addEventListener('submit', function(e) {
+		e.preventDefault();
+		const status = document.getElementById('formStatus');
+		const data = new FormData(this);
+		// Replace with your actual form endpoint (e.g. Formspree, Netlify Forms, etc.)
+		status.textContent = 'Sending...';
+		fetch('https://formspree.io/f/YOUR_FORM_ID', {
+			method: 'POST',
+			body: data,
+			headers: { 'Accept': 'application/json' }
+		}).then(res => {
+			if (res.ok) {
+				status.textContent = 'Sent. I\'ll get back to you soon.';
+				this.reset();
+			} else {
+				status.textContent = 'Something went wrong. Try emailing directly.';
+			}
+		}).catch(() => {
+			status.textContent = 'Something went wrong. Try emailing directly.';
+		});
+	});
+</script>
 </body>
 </html>

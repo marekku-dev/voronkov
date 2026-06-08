@@ -6,13 +6,17 @@
 
 body * {
 	font-family: 'ABC Monument Grotesk';
-	font-size: 14px;
+	font-size: 15px;
+}
+
+body {
+	background-color: #1a1a1a;
 }
 
 footer {
 	position: absolute;
-	bottom: 0;
-	z-index: 2;
+	top: 0;
+	z-index: 5;
 
 	width: 100vw;
 	height: 24px;
@@ -49,27 +53,56 @@ a {
 	color: #fff; 
 }
 
-.nav-left {
-	position: absolute;
+.navbar {
+	position: fixed;
+	top: 0;
 	left: 0;
-	width: 64px;
-	height: 100%;
-	padding: 14px;
-	z-index: 999;
+	width: 100vw;
+	height: 24px;
+	z-index: 2;
+	padding: 4px 8px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
 }
 
-.nav-right {
-	position: absolute;
-	right: 0;
-	width: 64px;
-	height: 100%;
-	padding: 14px;
-	text-align: right;
-	z-index: 999;
+.menu {
+	height: calc(100vh - 8px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.menu ul {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0;
+	list-style: none;
+}
+
+.navbar ul a {
+	padding: 0 4px;
+}
+
+.navbar-prev,
+.navbar-next {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.navbar-prev:hover,
+.navbar-next:hover {
+	opacity: 1;
 }
 
 .background {
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -80,8 +113,36 @@ a {
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
-	text-align: justify;
-	hyphens: auto;
+	/*text-align: justify;*/
+	/*hyphens: auto;*/
+}
+
+.koreshok {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	width: 320px;
+	padding: 4px 64px 8px 16px;
+	z-index: 1;
+	background: rgba(20, 20, 20, 0.98);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	box-shadow: -10px 0 20px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 288px;
+}
+
+.upper {
+	text-transform: uppercase;
 }
 
 .wrapper {
@@ -98,10 +159,10 @@ a {
 	align-items: center;
 	top: 0;
 	grid-column: span 2;
-	gap: 7px;
+	gap: 8px;
 
 	color: #fff;
-	padding: 14px 0;
+	padding: 0;
 }
 
 .text-main__wrapper p, .text-main__wrapper h2 {
@@ -144,27 +205,252 @@ a {
 	grid-column: span 2;
 	grid-template-columns: subgrid;
 
-	padding-top: 14px;
+	padding-top: 4px;
 	color: #fff;
-	/*mix-blend-mode: difference;*/
-}
-
-.half img {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.right img {
-	object-position: left center;
-}
-
-.left img {
-
-	object-position: right center;
 }
 
 .jouele-playlist {
 	width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
+
+/* Page bleed-through — adjacent pages faintly showing through the current sheets.
+   Mirrored horizontally, like the reverse side of a page read through paper.
+   Left half = previous page, right half = next page. */
+/* .page-bleed {
+	position: absolute;
+	top: 0;
+	width: 50vw;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+	pointer-events: none;
+	transform: scaleX(-1);
+	opacity: 0.08;
+	filter: blur(4px) grayscale(0.3);
+	mix-blend-mode: multiply;
+} */
+
+/* Left half — previous page bleeding through */
+/* .page-bleed--left {
+	left: 0;
+	object-position: right center;
+} */
+
+/* Right half — next page bleeding through */
+/* .page-bleed--right {
+	right: 0;
+	object-position: left center;
+} */
+
+/* Spread fold — imitation of an open book/magazine gutter */
+/* .spread-fold {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 140px;
+	height: 100%;
+	z-index: 0;
+	pointer-events: none;
+	background:
+		linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0)      0%,
+			rgba(0, 0, 0, 0.18)  42%,
+			rgba(0, 0, 0, 0.45)  49%,
+			rgba(0, 0, 0, 0.55)  50%,
+			rgba(0, 0, 0, 0.45)  51%,
+			rgba(0, 0, 0, 0.18)  58%,
+			rgba(0, 0, 0, 0)    100%
+		),
+		linear-gradient(
+			to right,
+			rgba(255, 255, 255, 0)    44%,
+			rgba(255, 255, 255, 0.06) 50%,
+			rgba(255, 255, 255, 0)    56%
+		);
+} */
+
+/* Inline highlight — per-line background */
+.highlight {
+	display: inline;
+	background: #1a1a1a;
+	color: #fff;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	padding: 0 4px;
+}
+
+.noscroll {
+	height: 100vh;
+	position: fixed;
+	top: 0;
+}
+
+/* Koreshok — vinyl record fine print */
+.koreshok-text {
+	font-size: 12px;
+	line-height: 1.4;
+	color: rgba(255, 255, 255, .5);
+	font-weight: 300;
+}
+
+.koreshok-text span {
+	color: rgba(255, 255, 255, 1);
+	font-size: 12px;
+}
+
+/* Jouele — highlight style */
+.jouele.jouele_inited {
+	background: #1a1a1a;
+	color: #fff;
+	padding: 2px 4px;
+}
+
+/* Contact form */
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	width: 288px;
+}
+
+.contact-form input,
+.contact-form textarea {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 1);
+	color: #fff;
+	font-family: 'ABC Monument Grotesk';
+	font-size: 15px;
+	padding: 7px 0;
+	outline: none;
+	width: 100%;
+	transition: border-color 0.2s;
+	resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+	color: rgba(255, 255, 255, 1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+	border-bottom-color: rgba(255, 255, 255, 1);
+}
+
+.contact-form button {
+	background: transparent;
+	border: none;
+	color: #fff;
+	font-family: 'ABC Monument Grotesk';
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 0;
+	cursor: pointer;
+	text-align: left;
+	opacity: 1;
+	transition: opacity 0.2s;
+	letter-spacing: 0.05em;
+}
+
+.contact-form button:hover {
+	opacity: 1;
+}
+
+.form-status {
+	font-size: 12px;
+	opacity: 0.5;
+	min-height: 16px;
+}
+/* ── Students Gallery ──────────────────────────────── */
+
+.students-gallery {
+	grid-column: span 2;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 32px 24px;
+	margin-top: 24px;
+}
+
+.student-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+.student-card img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	display: block;
+	opacity: .95;
+}
+
+.student-info {
+	padding-top: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.student-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.student-header > div {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.student-header strong {
+	font-family: 'ABC Monument Grotesk';
+	font-weight: 700;
+	font-size: 15px;
+	color: var(--color-light, #fff);
+	text-transform: none;
+}
+
+.student-header span {
+	font-family: 'ABC Monument Grotesk';
+	font-weight: 700;
+	font-size: 13px;
+	color: var(--color-light, #fff);
+	text-transform: none;
+}
+
+.student-info p {
+	font-size: 13px;
+	line-height: 1.5;
+	opacity: 0.7;
+	margin: 0;
+}
+
+.student-social {
+	color: var(--color-light, #fff);
+	opacity: 0.7;
+	flex-shrink: 0;
+	margin-top: 2px;
+	display: flex;
+	text-decoration: none;
+	transition: opacity 0.2s;
+}
+
+.student-social:hover {
+	opacity: 1;
+}
+
+.student-social--spotify {
+	color: #1DB954;
+	opacity: 1;
+}
+
+.student-card .jp-jplayer { display: none; }

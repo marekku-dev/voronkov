@@ -3,67 +3,85 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../main.css">
-	<link rel="stylesheet" href="../media.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="media.css">
 	<title>Ilya Voronkov – Music producer and sound engineer</title>
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Ilya Voronkov" />
 	<meta property="og:title" content="Ilya Voronkov" />
 	<meta property="og:url" content="" />
 	<meta property="og:image" content="" />
-	<link rel="icon" type="image/png" href="../favicon.png">
+	<link rel="icon" type="image/png" href="favicon.png">
 
-	<script src="../js/script.js"></script>
+	<script src="js/script.js" defer></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="../js/jouele/jouele.min.js"></script>
-	<link rel="stylesheet" href="../js/jouele/jouele.min.css">
-	<link rel="stylesheet" href="../js/jouele/jouele.skin.css">
+	<script src="js/jouele/jouele.min.js"></script>
+	<link rel="stylesheet" href="js/jouele/jouele.min.css">
+	<link rel="stylesheet" href="js/jouele/jouele.skin.css">
 </head>
 
 <body>
 
-<div class="wrapper">
-	<a class="nav-left" href="../classes.html">01<br>←</a>
-	<a class="nav-right" href="../about.html">02<br>→</a>
+<nav id="footer" class="navbar"></nav>
+
+<div class="wrapper page-index" data-prev="about.html" data-prev-n="01" data-next="works.html" data-next-n="02">
 
 	<div class="half left">
-		<div class="text-main__wrapper">
-			<h2>Music production<br>remote mixing & mastering</h2>
-			<p>A melody, a chord, or a rough demo — whatever the starting point, it becomes a complete, release-ready track, with every step of production handled in one place.</p>
-			<div class="jouele-playlist jouele-skin-dark">
-				<a href="../music/streets-of-love.mp3" class="jouele">Malaramu – Streets of love</a>
+		<div class="page">
+			<div class="text-main__wrapper">
+				<h2><span class="highlight">Music production<br>remote mixing & mastering</span></h2>
+				<p><span class="highlight">A melody, a chord, or a rough demo — whatever the starting point, it becomes a complete, release-ready track, with every step of production handled in one place.</span></p>
+				<div class="jouele-playlist jouele-skin-dark">
+					<a href="music/Malaramu - Movies (Mastered).mp3" class="jouele">Malaramu – Movies</a>
+					<a href="music/Соня Шац - Весенняя (Mastered).wav" class="jouele">Sonya Shats – Vesennaya</a>
+					<a href="music/wellowyellow - fool (Release V.).wav" class="jouele">wellowyellow – fool</a>
+					<a href="music/кто_такой_ильдар_вроде_бы_Fixed,_Mastered.wav" class="jouele">Kto Takoy Ildar Vrode By</a>
+					<a href="music/Didjikey - Ne Vidish (Solo guitar fixed, Mastered).wav" class="jouele">Didjikey – Ne Vidish</a>
+					<a href="music/Sabu - Моряк.wav" class="jouele">Sabu – Moryak</a>
+					<a href="music/Malaramu Streets of Love (Release Master).wav" class="jouele">Malaramu – Streets of Love</a>
+					<a href="music/Sparkling Punk - Мои чертики (Tweaked, Mastered).wav" class="jouele">Sparkling Punk – Moi Chertiki</a>
+					<a href="music/Все чем я (Mastered).wav" class="jouele">Vsem Chem Ya</a>
+					<a href="music/Лествица - Журавы (Fixed, Mastered).wav" class="jouele">Lestvitsa – Zhuravy</a>
+					
+				</div>
 			</div>
 		</div>
 
-		<div class="background-images__wrapper">
-			<img src="images/1.jpg">
+		<!-- <div class="background-images__wrapper">
+			<img src="images/1.png">
 			<img src="images/2.jpg">
 			<img src="images/3.jpg">
 			<img src="images/4.jpg">
-		</div>
+		</div> -->
 	</div>
 
 	<div class="half right">
-		<div class="text-main__wrapper">
-			<h2>production classes,<br>good vibes & no judgement</h2>
-			<p>I am convinced that the process of creating music is one of the most amazing and addictive things in life. It is a process of meditation, self-discovery and total immersion into the amazing world of sound that you are building.</p>
-			<ul></ul>
+		<div class="page">
+			<div class="text-main__wrapper">
+				<h2><span class="highlight">production classes,<br>good vibes & no judgement</span></h2>
+				<p><span class="highlight">I am convinced that the process of creating music is one of the most amazing and addictive things in life. It is a process of meditation, self-discovery and total immersion into the amazing world of sound that you are building.</span></p>
+				<div class="jouele-playlist jouele-skin-dark">
+					<a href="music/Malaramu - Movies (Mastered).mp3" class="jouele">Malaramu – Movies</a>
+				</div>
+			</div>
 		</div>
 
-		<div class="background-images__wrapper">
+		<!-- <div class="background-images__wrapper">
 			<img src="images/5.jpg">
 			<img src="images/6.jpg">
 			<img src="images/7.jpg">
 			<img src="images/8.jpg">
-		</div>
+		</div> -->
 	</div>
 
-	<footer id="footer"></footer>
+	<img src="images/main.webp" class="background">
+
+	
 
 </div>
 
 
-<script src="../js/components.js"></script>
+<script src="js/components.js"></script>
 </body>
 </html>

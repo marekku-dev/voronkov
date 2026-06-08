@@ -1,50 +1,109 @@
 @media (max-width: 768px) {
 
+/* Layout */
 .wrapper {
 	flex-direction: column;
 	height: auto;
 }
 
-footer {
-	bottom: auto;
-	top: 0;
-	height: auto;
-	padding: 7px 14px;
-
-	display: flex;
-	flex-direction: column;
-}
-
-footer .half {
-	flex-direction: column;
-	justify-content: flex-start;
-	gap: 0;
-	height: auto;
-}
-
-.nav-left, .nav-right {
-	display: none;
-}
-
 .half {
 	position: relative;
 	width: 100vw;
-	min-height: 80vh;
+	min-height: 100svh;
 	display: flex;
+	align-items: flex-start;
 }
 
-.page {
-	display: flex;
-	flex-direction: column;
-	padding: 70px 14px;
-}
-	
 .left, .right {
 	padding: 0;
 }
 
-.text-main__wrapper p, .text-main__wrapper h2 {
-	max-width: 50%;
+/* Hide the single desktop background image */
+.background {
+	display: none;
+}
+
+/* Per-page background images — one per half */
+.page-index .half      { background: url('images/main.webp') center/cover no-repeat; }
+.page-about .half      { background: url('images/about.png') center/cover no-repeat; }
+.page-works .half      { background: url('images/works.webp') center/cover no-repeat; }
+.page-production .half { background: url('images/production.jpg') center/cover no-repeat; }
+.page-classes .half    { background: url('images/classes.png') center/cover no-repeat; }
+
+/* Footer overrides */
+footer {
+	position: relative;
+	bottom: auto;
+	top: auto;
+	width: 100vw;
+	height: auto;
+	padding: 14px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	z-index: 2;
+	background: none;
+	min-height: auto;
+}
+
+footer .half {
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 6px;
+	background: none;
+}
+
+footer ul {
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+/* Text content */
+.page,
+.text-main__wrapper {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	padding: 48px 20px 40px;
+	width: 100%;
+	align-items: flex-start;
+	text-align: left;
+}
+
+.text-main__wrapper p,
+.text-main__wrapper h2 {
+	max-width: 100%;
+	text-align: left;
+}
+
+.justify {
+	text-align: left;
+	hyphens: none;
+}
+
+/* Navigation */
+.nav-left,
+.nav-right {
+	display: none;
+}
+
+/* Contact form */
+.contact-form {
+	max-width: 100%;
+}
+
+/* Jouele player */
+.jouele-playlist {
+	width: 100%;
 }
 
 }
