@@ -50,7 +50,7 @@ h1 {
 
 a {
 	text-decoration: none;
-	color: #fff; 
+	color: #1a1a1a; 
 }
 
 .navbar {
@@ -82,6 +82,7 @@ a {
 	align-items: center;
 	gap: 0;
 	list-style: none;
+	color: #1a1a1a !important;
 }
 
 .navbar ul a {
@@ -209,6 +210,10 @@ a {
 	color: #fff;
 }
 
+.page * {
+	color: #1a1a1a !important;
+}
+
 .jouele-playlist {
 	width: 300px;
     display: flex;
@@ -275,14 +280,15 @@ a {
 } */
 
 /* Inline highlight — per-line background */
-.highlight {
+
+/*.highlight {
 	display: inline;
 	background: #1a1a1a;
 	color: #fff;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
 	padding: 0 4px;
-}
+}*/
 
 .noscroll {
 	height: 100vh;
@@ -304,11 +310,11 @@ a {
 }
 
 /* Jouele — highlight style */
-.jouele.jouele_inited {
+/*.jouele.jouele_inited {
 	background: #1a1a1a;
 	color: #fff;
 	padding: 2px 4px;
-}
+}*/
 
 /* Contact form */
 .contact-form {
@@ -407,8 +413,9 @@ a {
 
 .student-header > div {
 	display: flex;
-	flex-direction: column;
-	gap: 2px;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
 }
 
 .student-header strong {
@@ -422,12 +429,13 @@ a {
 .student-header span {
 	font-family: 'ABC Monument Grotesk';
 	font-weight: 700;
-	font-size: 13px;
+	font-size: 15px;
 	color: var(--color-light, #fff);
 	text-transform: none;
 }
 
 .student-info p {
+	display: none;
 	font-size: 13px;
 	line-height: 1.5;
 	opacity: 0.7;
